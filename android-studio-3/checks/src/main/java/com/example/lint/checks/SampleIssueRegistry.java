@@ -21,6 +21,8 @@ import com.android.tools.lint.detector.api.Issue;
 import java.util.Collections;
 import java.util.List;
 
+import static com.android.tools.lint.detector.api.ApiKt.CURRENT_API;
+
 /*
  * The list of issues that will be checked when running <code>lint</code>.
  */
@@ -28,6 +30,11 @@ public class SampleIssueRegistry extends IssueRegistry {
     @Override
     public List<Issue> getIssues() {
         return Collections.singletonList(SampleCodeDetector.ISSUE);
+    }
+
+    @Override
+    public int getApi() {
+        return CURRENT_API;
     }
 }
 
